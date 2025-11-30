@@ -3,18 +3,18 @@ Feature: Funcionamiento en Modo Offline y Sincronización
   Quiero usar la app sin internet y sincronizar datos después
   Para no perder información en el campo
 
-  # US12: Registrar actividades sin conexión [cite: 634]
+  #US12: Registrar actividades sin conexión [cite: 634]
   Scenario: Guardado local de datos sin internet
     Given que el dispositivo detecta [Estado de Red: Desconectado]
-    When el usuario registra una nueva [Actividad de Siembra]
+    When El usuario registra una nueva [Actividad de Siembra]
     And presiona el botón [Guardar]
     Then el sistema almacena los datos en la [Base de Datos Local SQLite]
     And marca el registro con el flag [Pendiente de Sincronización]
 
   # US14: Indicar estado de conexión [cite: 637]
-  Scenario: Visualización de cambio a modo offline
+  Scenario: Visualización de cambio a modo offline 
     Given que la aplicación está en ejecución
-    When se pierde la señal de [Internet/Datos]
+    When se pierde la señal de [Internet/ Datos]
     Then el sistema muestra un [Icono de Nube Tachada] en la barra superior
     And despliega un mensaje temporal [Conexión perdida, modo offline activado]
 
@@ -31,6 +31,6 @@ Feature: Funcionamiento en Modo Offline y Sincronización
     When el sistema intenta ejecutar la [Sincronización Automática]
     Then el validador rechaza el envío de ese registro específico
     And genera un reporte de [Error de Validación] en el log del sistema
-
     And no envía los datos al [Servidor Central] 
     
+
