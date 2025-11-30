@@ -31,4 +31,6 @@ Feature: Funcionamiento en Modo Offline y Sincronización
     When el sistema intenta ejecutar la [Sincronización Automática]
     Then el validador rechaza el envío de ese registro específico
     And genera un reporte de [Error de Validación] en el log del sistema
-    And no envía los datos al [Servidor Central]
+
+    And no envía los datos al [Servidor Central] 
+    
